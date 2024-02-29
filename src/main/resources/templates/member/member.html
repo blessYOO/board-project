@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="py-5 text-center">
+        <h2>사용자 상세</h2>
+    </div>
+
+    <div>
+        <label for="memSeq">고유번호</label>
+        <input type="text" id="memSeq" name="memSeq" class="form-control" value="1" th:value="${member.memSeq}" readonly>
+    </div>
+    <div>
+        <label for="memId">ID</label>
+        <input type="text" id="memId" name="memId" class="form-control" value="1" th:value="${member.memId}" readonly>
+    </div>
+    <div>
+        <label for="memPass">비밀번호</label>
+        <input type="text" id="memPass" name="memPass" class="form-control" value="10000" th:value="${member.memPass}" readonly>
+    </div>
+    <div>
+        <label for="memName">사용자명</label>
+        <input type="text" id="memName" name="memName" class="form-control" value="사용자A" th:value="${member.memName}" readonly>
+    </div>
+    <div>
+        <label for="memAuth">권한</label>
+        <input type="text" id="memAuth" name="memAuth" class="form-control" value="10" th:value="${member.memAuth}" readonly>
+    </div>
+    <div>
+        <label for="useYn">사용여부</label>
+        <input type="text" id="useYn" name="useYn" class="form-control" value="10" th:value="${member.useYn}" readonly>
+    </div>
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
+                    th:onclick="|location.href='@{/members/member/{memSeq}/edit(memSeq=${member.memSeq})}'|"
+                    type="button">사용자 수정</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" onclick="location.href='items.html'"
+                    th:onclick="|location.href='@{/members/member}'|"
+                    type="button">목록으로</button>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+</body>
+</html>

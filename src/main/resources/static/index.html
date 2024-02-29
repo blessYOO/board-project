@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>게시판 프로그램
+        <ul>
+            <li><a href="/members/member" th:onclick="|location.href='@{/member/members}'|">사용자 관리 - 기본</a></li>
+        </ul>
+        <ul>
+            <li><a href="/boards/board">게시판 관리 - 기본</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
